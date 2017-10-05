@@ -1,0 +1,400 @@
+{
+  autoScroll : true,
+  bodyStyle : "padding:10px;",
+  labelAlign : "top",
+  layout : "form",
+  items : [    {
+      xtype : "panel",
+      cls : "tinyMCE"
+  },    {
+      layout : "column",
+      border : false,
+      items : [        {
+          layout : "form",
+          width : "65%",
+          labelAlign : "top",
+          bodyStyle : "left-padding: 5px",
+          items : [            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              hideInViewModes : "TYPAVSTART",
+              items : [                {
+                  xtype : "label",
+                  text : "Dina arbetsuppgifter",
+                  style : "font-weight:bold; font-size: 140%; color: #00a1cb;"
+              },                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  style : "margin-top: 10px;",
+                  name : "Info",
+                  html : "<p>Beslut har fattats f&ouml;r uppstart av denna praktiker. Du beh&ouml;ver nu genomf&ouml;ra arbetsuppgifterna nedan. Observera eventuella kommentarer fr&aring;n Koordinators &ouml;verl&auml;mningsm&ouml;te.</p>"
+              },                {
+                  xtype : "textarea",
+                  fieldLabel : "Kommentarer från Koordinator",
+                  anchor : "100%",
+                  name : "kommentarKoordinator",
+                  labelSeparator : ":"
+              }]
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Löneadministratör utsedd (chef)",
+                  name : "utseLoneadmin",
+                  hideInViewModes : "STRALSKYDD,HR,UTBILDNING,VARDSTOD,MARKNAD,AOASS,KOORDINATOR,AC"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Personalanmälan registrerad (K01)",
+                  name : "persAnm",
+                  hideInViewModes : "STRALSKYDD,HR,UTBILDNING,VARDSTOD,MARKNAD,AOASS,KOORDINATOR,AC"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "TYPAVSTART",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Ansökt om tillstånd för röntgen",
+                  name : "tillstandAnsokan"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Erhållit tillstånd för röntgen",
+                  name : "tillstandErhallit"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "LONETJANSTER,HR,UTBILDNING,VARDSTOD,MARKNAD,AOASS,KOORDINATOR,AC",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%",
+              name : "stralskydd"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Information säkerställd",
+                  name : "infoSakerstalld"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "LONETJANSTER,STRALSKYDD,UTBILDNING,VARDSTOD,MARKNAD,AOASS,KOORDINATOR,AC",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Praktiker inlagd i grupp för introduktionsåret",
+                  name : "inlagdIntro"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "LONETJANSTER,STRALSKYDD,HR,VARDSTOD,MARKNAD,AOASS,KOORDINATOR,AC",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Användare upplagda i aktuellt journalsystem",
+                  name : "upplagdJournal"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "LONETJANSTER,STRALSKYDD,HR,UTBILDNING,MARKNAD,AOASS,KOORDINATOR,AC",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Domän registrerad",
+                  name : "domanRegistrerad"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Hemsida skapad",
+                  name : "hemsidaSkapad"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "LONETJANSTER,STRALSKYDD,HR,UTBILDNING,VARDSTOD,AOASS,KOORDINATOR,AC",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Uppdatera HSA samt EK-katalogen (enbart SLL samt VLL)",
+                  name : "HSAEK"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Lägg in koordinater i Kundstöd",
+                  name : "koordinater"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Informera IT hur personalstyrkan ser ut på mottagningen",
+                  name : "personalIT"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Uppdatera 1177",
+                  name : "vardguidenHS"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Hantera E-frikort",
+                  name : "eFrikort"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Lägg upp KST i HS Ledningssystem",
+                  name : "HSLedningsystem"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "LONETJANSTER,STRALSKYDD,HR,UTBILDNING,VARDSTOD,MARKNAD,KOORDINATOR,AC",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Hantera telefoni",
+                  name : "hanteraTelefoni"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Utskick till patienter",
+                  name : "trivselbrev"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Information om arbetskläder",
+                  name : "arbetsklader"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Skyltar och kontorsmaterial",
+                  name : "skyltarKontor"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Information om hemsida",
+                  name : "hemsidaKoordinator"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "A-skattesedel",
+                  name : "aSkatt"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "E-tjänstekort (kontrollera med AO-assistent)",
+                  name : "eTjanstekort"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Anmälan till IVO",
+                  name : "anmalanIVO"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Beställ kuvert etc. hos Kontorsservice",
+                  name : "bestallKuvert"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Maila Läkareförbundet om att ny läkare börjar",
+                  name : "mailaLakareforbundet"
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Mailadress",
+                  anchor : "100%",
+                  name : "epostadressLakareforbundet",
+                  emptyText : "johnny.gustafsson@slf.se"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Beställ PlusGiro (kontrollera om pengarna ska in på HK eller GK)",
+                  name : "bestallPG"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Beställ Loomis, insättningspåsar för dagskassa (kontrollera om pengarna ska in på HK eller GK)",
+                  name : "bestallLoomis"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "817ab109-a457-452b-a862-f803a6e18c39.type",
+                  fieldLabel : "Betalterminal (kontrollera om pengarna ska in på HK eller GK)",
+                  name : "betalterminal",
+                  labelSeparator : ":"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Beställ Eurocard",
+                  name : "bestallEurocard"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Kontinuitetsförklaring",
+                  name : "kontinuitet"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Kvalitetsenkät",
+                  name : "kvalitetsenkat"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Uppdatera PG i Kundstöd",
+                  name : "uppdateraPG"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Skicka blommor inför start",
+                  name : "skickaBlommor"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Debitera uppstartsavgift",
+                  name : "debiteraUppstart"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Uppdatera kontaktuppgifter i Kundstöd",
+                  name : "uppdateraKontakt"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "LONETJANSTER,STRALSKYDD,HR,UTBILDNING,VARDSTOD,MARKNAD,AOASS,AC",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          }]
+      },        {
+          layout : "form",
+          width : "34%",
+          labelAlign : "top",
+          bodyStyle : "padding: 10px",
+          items : [            {
+              xtype : "combotypefield2",
+              typeNamespace : "75b8a768-3003-4b78-90fd-01ea917fbf1d.type",
+              fieldLabel : "Vilken typ av start gäller ärendet",
+              name : "typavStart",
+              labelSeparator : "?",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+              anchor : "100%",
+              style : "border-radius:3px",
+              allowBlank : false
+          },            {
+              autoHeight : true,
+              items : [                {
+                  xtype : "textfield",
+                  fieldLabel : "Namn",
+                  anchor : "100%",
+                  name : "namn",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i förnamn och efternamn",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Adress",
+                  anchor : "100%",
+                  name : "adress",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i postadress",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "E-post",
+                  anchor : "100%",
+                  name : "epost",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i epostadress",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Telefon",
+                  anchor : "100%",
+                  name : "telefon",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i telefonnummer",
+                  allowBlank : false
+              },                {
+                  autoHeight : true,
+                  labelAlign : "top",
+                  items : [                    {
+                      xtype : "numberfield",
+                      fieldLabel : "Intressentnummer",
+                      name : "intressentnummer",
+                      maxLength : 6,
+                      minLength : 6,
+                      anchor : "100%",
+                      style : "border-radius:3px",
+                      emptyText : "Fyll i enligt format 9xxxxx",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "numberfield",
+                      fieldLabel : "Budgeterad lön",
+                      name : "lon",
+                      anchor : "100%",
+                      emptyText : "Fyll i föreslagen lön",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "numberfield",
+                      fieldLabel : "Budgeterad pension",
+                      name : "pension",
+                      anchor : "100%",
+                      emptyText : "Fyll i föreslagen pension",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "71057963-d0c4-44de-8719-6619924f34f7.type",
+                      fieldLabel : "Intäktskälla",
+                      name : "intaktskalla",
+                      anchor : "100%",
+                      emptyText : "Välj intäktskälla",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "d2779f6e-0542-4b5b-a518-ef2e9a933a85.type",
+                      fieldLabel : "Landsting",
+                      name : "landsting",
+                      anchor : "100%",
+                      emptyText : "Välj vilket landsting verksamheten drivs i",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "textfield",
+                      fieldLabel : "Journalsystem",
+                      anchor : "100%",
+                      name : "Field9",
+                      emptyText : "Fyll i vilket Journalsystem som ska användas"
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Föreslaget startdatum för anställning",
+                      name : "foreslagetStartdatumAnst",
+                      anchor : "100%",
+                      emptyText : "Välj förslagen startdatum för kostnadsstället",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Välj förslaget startdatum för klinisk start",
+                      name : "foreslagetStartdatumKlinisk",
+                      anchor : "100%",
+                      emptyText : "Välj förslaget startdatum för klinisk start",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  }],
+                  hideInViewModes : "TYPAVSTART",
+                  collapsible : true,
+                  collapsed : false,
+                  layout : "form",
+                  title : "Uppgifter om affär (klicka för att se mer)"
+              }],
+              labelAlign : "top",
+              title : "Uppgifter om kandidat",
+              layout : "form",
+              anchor : "100%"
+          }]
+      }],
+      anchor : "100%",
+      colspan : 2
+  }],
+  width : "100%"
+}
