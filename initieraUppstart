@@ -1,0 +1,475 @@
+{
+  autoScroll : true,
+  bodyStyle : "padding:10px;",
+  labelAlign : "top",
+  layout : "form",
+  items : [    {
+      xtype : "panel",
+      cls : "tinyMCE"
+  },    {
+      layout : "column",
+      border : false,
+      items : [        {
+          layout : "form",
+          width : "65%",
+          labelAlign : "top",
+          bodyStyle : "left-padding: 5px",
+          items : [            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Dina arbetsuppgifter",
+                  style : "font-weight:bold; font-size: 140%; color: #00a1cb;"
+              },                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  style : "margin-top: 10px;",
+                  name : "Info",
+                  html : "<p>Du beh&ouml;ver nu genomf&ouml;ra arbetsuppgifterna nedan kring detta avslut.</p>"
+              },                {
+                  xtype : "textarea",
+                  fieldLabel : "Kommentarer från Koordinator",
+                  anchor : "100%",
+                  name : "kommentarKoordinator",
+                  labelSeparator : ":",
+                  hideInViewModes : "INITAVSLUT,GRUNDINFO,HR"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "3e8b2a00-6b0e-4fa2-9f75-0badc70b8398.type",
+                  fieldLabel : "Utsedd koordinator",
+                  name : "utseddKoordinator"
+              }]
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Arbetsuppgifter vid utköp",
+                  style : "font-weight:bold; font-size: 110%; color: #000000;",
+                  hidden : false,
+                  grow : true
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Ska vårdgivarutskick göras",
+                  name : "patientbrev",
+                  hideInViewModes : "INITAVSLUT",
+                  listeners :                   {
+                    render : function (combo) {
+var form = combo.findParentByType("jsonformpanel");
+if(!form) 
+    form = Ext.getCmp("presentpanel");
+if (form)
+    form.on("afterjsonload",function() {combo.togglePanels(combo);});
+},
+                    select : function (combo) {
+combo.getFormField("adresslista").setValue("");
+combo.togglePanels(combo); 
+    }
+                },
+                  togglePanels : function () {
+  var adresslista = this.getFormField('adresslista');
+  var patientbrev = this.getFormField('patientbrev').getValue();
+  
+    if (patientbrev == 'Ja')
+      {
+          adresslista.show();
+          adresslista.allowBlank = false;
+          adresslista.validate();        
+     }
+      else
+        {
+          adresslista.hide();
+          adresslista.allowBlank = true;
+          adresslista.validate();          
+     }  
+ 
+}
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Adresslista för patienter mottagen",
+                  name : "adresslista",
+                  grow : true,
+                  hidden : true
+              }],
+              name : "fieldsetUtkop"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Arbetsuppgifter vid internförsäljning",
+                  style : "font-weight:bold; font-size: 110%; color: #000000;",
+                  hidden : false,
+                  grow : true
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Beslut om internt köp K1 (HK)",
+                  name : "k1"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Beslut om internt köp K2 (GK)",
+                  name : "k2"
+              }],
+              name : "fieldsetInternforsaljning"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Delgivit praktiker pensionsinformation",
+                  name : "pensionsinformation",
+                  allowBlank : false,
+                  allowBlankInViewModes : "GRUNDINFO,HR",
+                  lockInViewModes : "GRUNDINFO",
+                  hideInViewModes : "INITAVSLUT,HR"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "INITAVSLUT",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Kontrollerat uppsägningar med AC",
+                  name : "kontrolleraUppsagning",
+                  allowBlank : false,
+                  allowBlankInViewModes : "GRUNDINFO,PENSION",
+                  lockInViewModes : "GRUNDINFO",
+                  hideInViewModes : "INITAVSLUT,PENSION"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "INITAVSLUT",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Finns röntgen",
+                  name : "finnsRontgen",
+                  allowBlank : false,
+                  allowBlankInViewModes : "INITAVSLUT,PENSION"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Finns personal",
+                  name : "finnsPersonal",
+                  allowBlank : false,
+                  allowBlankInViewModes : "PENSION"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "PENSION,",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Patienträkning initierad",
+                  name : "patientrakning",
+                  hideInViewModes : "INITAVSLUT"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Marknadsvärdering genomförd i Kreditgruppen",
+                  name : "marknadsvardering",
+                  hideInViewModes : "INITAVSLUT"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Skickat leverantörslista till praktiker",
+                  name : "leverantorslista",
+                  hideInViewModes : "PENSION,INITAVSLUT,HR"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Finns förmånsbil",
+                  name : "formansbil",
+                  allowBlank : false,
+                  allowBlankInViewModes : "INITAVSLUT,PENSION,HR",
+                  hideInViewModes : "INITAVSLUT",
+                  listeners :                   {
+
+                }
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Utförd värdering av privata inventarier",
+                  name : "privataInventarier",
+                  hideInViewModes : "PENSION,INITAVSLUT,HR"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Inventarieförteckning överlämnad till praktiker",
+                  name : "inventarieforteckning",
+                  hideInViewModes : "INITAVSLUT,HR,PENSION",
+                  listeners :                   {
+
+                }
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Finns nyttjanderätt",
+                  name : "nyttjanderatt",
+                  hideInViewModes : "INITAVSLUT,HR,PENSION",
+                  listeners :                   {
+                    render : function (combo) {
+var form = combo.findParentByType("jsonformpanel");
+if(!form) 
+    form = Ext.getCmp("presentpanel");
+if (form)
+    form.on("afterjsonload",function() {combo.togglePanels(combo);});
+},
+                    select : function (combo) {
+combo.getFormField("avslutaNyttjanderatt").setValue("");
+combo.togglePanels(combo); 
+    }
+                },
+                  togglePanels : function () {
+  var avslutaNyttjanderatt = this.getFormField('avslutaNyttjanderatt');
+  var nyttjanderatt = this.getFormField('nyttjanderatt').getValue();
+  
+    if (nyttjanderatt == 'Ja')
+      {
+          avslutaNyttjanderatt.show();
+          avslutaNyttjanderatt.allowBlank = false;
+          avslutaNyttjanderatt.validate();        
+     }
+      else
+        {
+          avslutaNyttjanderatt.hide();
+          avslutaNyttjanderatt.allowBlank = true;
+          avslutaNyttjanderatt.validate();          
+     }  
+ 
+}
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Avsluta avtal för nyttjanderätt",
+                  name : "avslutaNyttjanderatt",
+                  grow : true,
+                  hidden : true
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "64fc6eb9-c38d-4c17-9a13-428a8eafebf9.type",
+                  fieldLabel : "Ska praktikern vara kvar i Praktikertjänst",
+                  name : "praktikerKvar",
+                  hideInViewModes : "INITAVSLUT,HR,PENSION",
+                  allowBlank : false,
+                  allowBlankInViewModes : "INITAVSLUT,HR,PENSION"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Avgångsanmälan inkommen",
+                  name : "avgangsanmalanInkommen"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Avtal inkomna",
+                  name : "avtalInkomna"
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "INITAVSLUT,PENSION",
+              style : "border:0; padding-left:0px;",
+              anchor : "100%"
+          }]
+      },        {
+          layout : "form",
+          width : "34%",
+          labelAlign : "top",
+          bodyStyle : "padding: 10px",
+          items : [            {
+              xtype : "combotypefield2",
+              typeNamespace : "9fb05efe-9e15-4680-b550-4ec478dbfe5d.type",
+              fieldLabel : "Avgångsorsak",
+              name : "avgangsorsak",
+              labelSeparator : "?",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+              anchor : "100%",
+              style : "border-radius:3px",
+              allowBlank : false
+          },            {
+              xtype : "combotypefield2",
+              typeNamespace : "e3d921ca-66bc-49fe-a03a-92d1ca9d69fa.type",
+              fieldLabel : "Vad händer med resultatenheten",
+              name : "vadHander",
+              labelSeparator : "?",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+              anchor : "100%",
+              style : "border-radius:3px",
+              allowBlank : false,
+              listeners :               {
+                render : function (combo) {
+var form = combo.findParentByType("jsonformpanel");
+if(!form) 
+    form = Ext.getCmp("presentpanel");
+if (form)
+    form.on("afterjsonload",function() {combo.togglePanels(combo);});
+},
+                select : function (combo) {
+combo.getFormField("fieldsetUtkop").setValue("");
+combo.getFormField("fieldsetInternforsaljning").setValue("");
+combo.togglePanels(combo); 
+    }
+            },
+              togglePanels : function () {
+  var fieldsetUtkop = this.getFormField('fieldsetUtkop');
+  var fieldsetInternforsaljning = this.getFormField('fieldsetInternforsaljning').getValue();
+  var vadHander = this.getFormField('vadHander');   
+  
+    if (vadHander == 'Säljs Internt')
+      {
+          fieldsetInternforsaljning.show();
+          fieldsetInternforsaljning.validate();        
+     }
+      else
+        {
+          fieldsetInternforsaljning.hide();
+          fieldsetInternforsaljning.validate();          
+     }  
+   
+       if (vadHander == 'Köps ut')
+      {
+          fieldsetUtkop.show();
+          fieldsetUtkop.validate();        
+     }
+      else
+        {
+          fieldsetUtkop.hide();
+          fieldsetUtkop.validate();          
+     }  
+ 
+}
+          },            {
+              xtype : "textfield",
+              fieldLabel : "Vilka är köparna?",
+              anchor : "100%",
+              name : "vilkaArKoparna",
+              emptyText : "Syns bara vid internförsäljning"
+          },            {
+              xtype : "combotypefield2",
+              typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+              fieldLabel : "Finns intressent",
+              name : "finnsIntressent",
+              labelSeparator : "?",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+              anchor : "100%",
+              style : "border-radius:3px",
+              allowBlank : false,
+              emptyText : "Syns bara vid Rekrytering"
+          },            {
+              xtype : "textfield",
+              fieldLabel : "Uppgifter på intressent",
+              anchor : "100%",
+              name : "uppgifterIntressent",
+              emptyText : "Syns bara om intressent finns (ej oblg.)"
+          },            {
+              autoHeight : true,
+              items : [                {
+                  xtype : "textfield",
+                  fieldLabel : "Namn",
+                  anchor : "100%",
+                  name : "namn",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i förnamn och efternamn",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Adress",
+                  anchor : "100%",
+                  name : "adress",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i postadress",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "E-post",
+                  anchor : "100%",
+                  name : "epost",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i epostadress",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Telefon",
+                  anchor : "100%",
+                  name : "telefon",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i telefonnummer",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Resultatenhetsnummer",
+                  anchor : "100%",
+                  name : "rhnr",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i telefonnummer",
+                  allowBlank : false
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Finns flera resultatenheter",
+                  name : "FinnsFleraRH",
+                  labelSeparator : "?",
+                  allowBlank : false
+              },                {
+                  autoHeight : true,
+                  labelAlign : "top",
+                  items : [                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "d2779f6e-0542-4b5b-a518-ef2e9a933a85.type",
+                      fieldLabel : "Landsting",
+                      name : "landsting",
+                      anchor : "100%",
+                      emptyText : "Välj vilket landsting verksamheten drivs i",
+                      allowBlank : false
+                  },                    {
+                      xtype : "textfield",
+                      fieldLabel : "Journalsystem",
+                      anchor : "100%",
+                      name : "Field9",
+                      emptyText : "Fyll i vilket Journalsystem som används",
+                      allowBlank : false
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Föreslaget stängdatum för kliniskt avslut",
+                      name : "foreslagetStangdatumKlinisk",
+                      anchor : "100%",
+                      emptyText : "Välj föreslaget stängdatum för kliniskt avslut",
+                      allowBlank : false
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Föreslaget stängdatum för anställning",
+                      name : "foreslagetStangdatumAnst",
+                      anchor : "100%",
+                      emptyText : "Välj föreslaget stängdatum för anställning",
+                      allowBlank : false
+                  }],
+                  collapsible : true,
+                  collapsed : false,
+                  layout : "form",
+                  title : "Uppgifter om avslut"
+              }],
+              labelAlign : "top",
+              layout : "form",
+              anchor : "100%",
+              title : "Uppgifter om praktiker"
+          }]
+      }],
+      anchor : "100%",
+      colspan : 2
+  }],
+  width : "100%"
+}
