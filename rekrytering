@@ -1,0 +1,338 @@
+{
+  autoScroll : true,
+  bodyStyle : "padding:10px;",
+  labelAlign : "top",
+  layout : "form",
+  items : [    {
+      xtype : "panel",
+      cls : "tinyMCE"
+  },    {
+      layout : "column",
+      border : false,
+      items : [        {
+          layout : "form",
+          width : "65%",
+          labelAlign : "top",
+          bodyStyle : "left-padding: 5px",
+          items : [            {
+              xtype : "panel",
+              cls : "tinyMCE",
+              bodyBorder : false,
+              html : "<p>Fyll i vilken typ av uppstart det g&auml;ller samt uppgifter om kandidat.</p>",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              hideInViewModes : "TYPAVSTART",
+              items : [                {
+                  xtype : "label",
+                  text : "Dina arbetsuppgifter",
+                  style : "font-weight:bold; font-size: 140%; color: #00a1cb;"
+              },                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  name : "infoKandidat",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+                  html : "<p>Fyll i datum f&ouml;r ans&ouml;kan och ange uppgifter om kandidaten.</p>",
+                  style : "margin-top: 10px;"
+              },                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  name : "infoRontgen",
+                  hideInViewModes : "AFFARSUPPGIFTER,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+                  style : "margin-top: 10px;",
+                  html : "<p>Du beh&ouml;ver ta st&auml;llning till om r&ouml;ntgentillst&aring;nd &auml;r tillr&auml;ckliga f&ouml;r start av kostnadsst&auml;lle. Om du v&auml;ljer nej, v&auml;nligen anv&auml;nd <em>kommentarsf&auml;ltet</em>&nbsp;nedan f&ouml;r att f&ouml;rklara vad som beh&ouml;ver g&ouml;ras och hur l&aring;ng tid det kommer att ta. Denna information f&ouml;rmedlas till Avdelningschef som fattar beslut om fortsatt uppstart.</p>"
+              },                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  name : "infoAvdelningschef",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,SKAPAKST,AVTALSSKRIVNING",
+                  html : "<p>Du beh&ouml;ver fatta beslut om denna anst&auml;llning ska genomf&ouml;ras eller inte. Om du v&auml;ljer ja g&aring;r &auml;rendet vidare till aff&auml;rsomr&aring;desassistent som administrerar uppstarten.</p>",
+                  style : "margin-top: 10px;"
+              },                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  html : "<p>Du har nu bekr&auml;ftat att denna intressent har startat processen f&ouml;r rekrytering. Kom ih&aring;g att spara aff&auml;rsplan samt att skicka startpaket.</p>\n<p>Du beh&ouml;ver nu:</p>\n<ul>\n<li>Kontakta tillt&auml;nkt aff&auml;rscoach samt koordinator.</li>\n<li>Sammankalla kreditgruppen.</li>\n<li>Samla in referenser samt kontrollera dessa.</li>\n</ul>\n<p>Fyll i stegen nedan och klarmarkera arbetsuppgiften.</p>",
+                  name : "infoAffar",
+                  hideInViewModes : "RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+                  style : "margin-top: 10px;"
+              },                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  name : "infoAffarsomradesassistent",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,AVTALSSKRIVNING",
+                  style : "margin-top: 10px;",
+                  html : "<p>Denna uppstart &auml;r godk&auml;nd av avdelningschef. Du beh&ouml;ver nu skapa kostnadsst&auml;lle samt avtal. Du hittar avtalsmallar p&aring; n&auml;tverksenheten \"Aff&auml;rscoach/Avtalsmallar\". <em><strong>Observera att eventuellt k&ouml;peavtal ska inkluderas.&nbsp;</strong></em></p>\n<p>Anv&auml;nd checklistan nedan f&ouml;r att bocka av dina arbetsuppgifter.</p>"
+              },                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  name : "infoAvtal",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST",
+                  style : "margin-top: 10px;",
+                  html : "<p>Du beh&ouml;ver nu genomf&ouml;ra <strong>m&ouml;te med tillt&auml;nkt kostnadsst&auml;lleansvarig</strong> samt genomf&ouml;ra avtalsskrivning. Avtalen skall sedan skickas f&ouml;r scanning.</p>\n<p>N&auml;r det &auml;r gjort beh&ouml;ver du genomf&ouml;ra en <strong>&ouml;verl&auml;mning till Aff&auml;rscoach och Koordinator</strong>. N&auml;r m&ouml;ten &auml;r genomf&ouml;rda, klarmarkera arbetsuppgiften f&ouml;r att skicka processen till resterande avdelningar.</p>"
+              }]
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              items : [                {
+                  xtype : "checkbox",
+                  boxLabel : "Ansökan om anställning samt affärsplan mottagen",
+                  name : "planMottagen",
+                  hideInViewModes : "TYPAVSTART,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART"
+              },                {
+                  xtype : "datefield",
+                  fieldLabel : "Datum för ansökan",
+                  name : "datumAnsokan",
+                  hideInViewModes : "TYPAVSTART,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING,OVERLAMNING,SCANNING",
+                  style : "border-radius:3px",
+                  anchor : "100%",
+                  emptyText : "Välj vilket datum ansökan kom in",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Finns röntgenutrustning i verksamheten",
+                  name : "finnsRontgen",
+                  style : "border-radius:3px",
+                  hideInViewModes : "SKAPAKST",
+                  anchor : "100%",
+                  lockInViewModes : "RONTGEN,BESLUT,AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Finns utbildad röntgenpersonal",
+                  name : "rontgenGodkant",
+                  hideInViewModes : "AFFARSUPPGIFTER,SKAPAKST",
+                  style : "border-radius:3px",
+                  anchor : "100%",
+                  lockInViewModes : "BESLUT,AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Godkänt i Kreditgruppen",
+                  name : "godkantKreditgruppen",
+                  style : "border-radius:3px",
+                  hideInViewModes : "RONTGEN,SKAPAKST",
+                  anchor : "100%",
+                  lockInViewModes : "BESLUT,AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Referenser mottagna",
+                  name : "referenserMottagna",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART",
+                  hideInViewModes : "RONTGEN,SKAPAKST",
+                  lockInViewModes : "BESLUT,AVTALSSKRIVNING"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Rekommenderas anställning",
+                  name : "rekommenderasAnstallning",
+                  style : "border-radius:3px",
+                  hideInViewModes : "RONTGEN,SKAPAKST",
+                  anchor : "100%",
+                  lockInViewModes : "BESLUT,AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART"
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Anställning godkännes",
+                  name : "anstallningGodkannes",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,SKAPAKST",
+                  style : "border-radius:3px",
+                  anchor : "100%",
+                  lockInViewModes : "AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Avtal signerade",
+                  name : "avtalSignerade",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Registrera personalanmälan (Personalwebben)",
+                  name : "regPersonalanmalan",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Sänd personalanmälan",
+                  name : "sandPersonalanmalan",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Anmälan om aktieköp har inkommit",
+                  name : "aktiekop",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,AVTALSSKRIVNING",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST"
+              },                {
+                  xtype : "checkbox",
+                  boxLabel : "Avtal skickade till Scanning",
+                  name : "avtalSkickade",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST",
+                  allowBlank : false,
+                  allowBlankInViewModes : "TYPAVSTART,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST"
+              },                {
+                  xtype : "datefield",
+                  fieldLabel : "Fastställt startdatum",
+                  name : "faststalltStartdatum",
+                  allowBlankInViewModes : "TYPAVSTART,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST",
+                  hideInViewModes : "AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST",
+                  anchor : "100%",
+                  style : "border-radius:3px",
+                  emptyText : "Välj startdatum för kostnadsstället",
+                  allowBlank : false
+              }],
+              labelAlign : "top",
+              labelSeparator : "?",
+              hideInViewModes : "TYPAVSTART",
+              style : "border:0; padding-left:0px;",
+              anchor : "40%"
+          }]
+      },        {
+          layout : "form",
+          width : "34%",
+          labelAlign : "top",
+          bodyStyle : "padding: 10px",
+          items : [            {
+              xtype : "combotypefield2",
+              typeNamespace : "75b8a768-3003-4b78-90fd-01ea917fbf1d.type",
+              fieldLabel : "Vilken typ av start gäller ärendet",
+              name : "typavStart",
+              labelSeparator : "?",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+              anchor : "100%",
+              style : "border-radius:3px",
+              allowBlank : false
+          },            {
+              autoHeight : true,
+              items : [                {
+                  xtype : "textfield",
+                  fieldLabel : "Namn",
+                  anchor : "100%",
+                  name : "namn",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i förnamn och efternamn",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Adress",
+                  anchor : "100%",
+                  name : "adress",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i postadress",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "E-post",
+                  anchor : "100%",
+                  name : "epost",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i epostadress",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Telefon",
+                  anchor : "100%",
+                  name : "telefon",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i telefonnummer",
+                  allowBlank : false
+              },                {
+                  autoHeight : true,
+                  labelAlign : "top",
+                  items : [                    {
+                      xtype : "numberfield",
+                      fieldLabel : "Intressentnummer",
+                      name : "intressentnummer",
+                      maxLength : 6,
+                      minLength : 6,
+                      anchor : "100%",
+                      style : "border-radius:3px",
+                      emptyText : "Fyll i enligt format 9xxxxx",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "numberfield",
+                      fieldLabel : "Budgeterad lön",
+                      name : "lon",
+                      anchor : "100%",
+                      emptyText : "Fyll i föreslagen lön",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "numberfield",
+                      fieldLabel : "Budgeterad pension",
+                      name : "pension",
+                      anchor : "100%",
+                      emptyText : "Fyll i föreslagen pension",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "71057963-d0c4-44de-8719-6619924f34f7.type",
+                      fieldLabel : "Intäktskälla",
+                      name : "intaktskalla",
+                      anchor : "100%",
+                      emptyText : "Välj intäktskälla",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "d2779f6e-0542-4b5b-a518-ef2e9a933a85.type",
+                      fieldLabel : "Landsting",
+                      name : "landsting",
+                      anchor : "100%",
+                      emptyText : "Välj vilket landsting verksamheten drivs i",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Föreslaget startdatum",
+                      name : "foreslagetStartdatum",
+                      anchor : "100%",
+                      emptyText : "Välj förslagen startdatum för kostnadsstället",
+                      allowBlank : false,
+                      allowBlankInViewModes : "TYPAVSTART"
+                  }],
+                  hideInViewModes : "TYPAVSTART",
+                  collapsible : true,
+                  collapsed : false,
+                  layout : "form",
+                  title : "Uppgifter om affär (klicka för att se mer)"
+              }],
+              labelAlign : "top",
+              title : "Uppgifter om kandidat",
+              layout : "form",
+              anchor : "100%"
+          }]
+      }],
+      anchor : "100%",
+      colspan : 2
+  }],
+  width : "100%"
+}
