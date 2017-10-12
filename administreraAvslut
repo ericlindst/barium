@@ -276,16 +276,35 @@
                       boxLabel : "Enkät mottagen",
                       name : "enkatMottagen"
                   },                    {
-                      xtype : "checkbox",
-                      boxLabel : "Enkät mottagen",
-                      name : "enkatMottagen"
-                  },                    {
                       xtype : "datefield",
                       fieldLabel : "Slutavräkning utskickad",
                       name : "slutavrakningUtskickad"
                   },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Slutavräkning godkänd",
+                      name : "slutavrakningGodkand"
+                  },                    {
                       xtype : "button",
-                      text : "it-support@ptj.se"
+                      text : "pension@ptj.se, praktikerservice@ptj.se"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Skicka underlag till Lönetjänster för utbetalning",
+                      name : "underlagLonetjanster"
+                  },                    {
+                      xtype : "button",
+                      text : "lonetjanster@ptj.se"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Skicka underlag till Lönetjänster för stoppande av á-contopension",
+                      name : "underlagLonetjansterPension"
+                  },                    {
+                      xtype : "button",
+                      text : "lonetjanster@ptj.se"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "2689593d-bd91-4704-bcd0-1ad79eec7009.type",
+                      fieldLabel : "Ange hur överskott vid slutavräkning är utbetalt",
+                      name : "overskottUtbetalt"
                   }]
               }],
               anchor : "100%",
@@ -723,8 +742,31 @@
                       boxLabel : "Slutavräkning"
                   },                    {
                       xtype : "checkbox",
+                      name : "infoAktier",
+                      boxLabel : "Information om aktier"
+                  },                    {
+                      xtype : "checkbox",
                       name : "minnesgava",
                       boxLabel : "Minnesgåva"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "tackkort2",
+                      boxLabel : "Tackkort skickat till praktiker"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "eurocard",
+                      boxLabel : "Avsluta eventuella Eurocard"
+                  },                    {
+                      xtype : "button",
+                      text : "michael.craas@ptj.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "uppdateraAdress",
+                      boxLabel : "Uppdatera adress"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "debiteraAvslutsavgift",
+                      boxLabel : "Debitera avslutsavgift"
                   }]
               }],
               anchor : "100%",
@@ -784,19 +826,19 @@
  
 },
               listeners : {
-  render : function (combo) {
+                render : function (combo) {
 var form = combo.findParentByType("jsonformpanel");
 if(!form) 
     form = Ext.getCmp("presentpanel");
 if (form)
     form.on("afterjsonload",function() {combo.togglePanels(combo);});
 },
-  select : function (combo) {
+                select : function (combo) {
 combo.getFormField("utkop").setValue("");
 combo.getFormField("internForsaljning").setValue("");
 combo.togglePanels(combo); 
     }
-}
+            }
           },            {
               xtype : "textfield",
               fieldLabel : "Vilka är köparna",
