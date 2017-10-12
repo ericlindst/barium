@@ -1,0 +1,933 @@
+{
+  autoScroll : true,
+  bodyStyle : "padding:10px;",
+  labelAlign : "top",
+  layout : "form",
+  items : [    {
+      xtype : "panel",
+      cls : "tinyMCE"
+  },    {
+      layout : "column",
+      border : false,
+      items : [        {
+          layout : "form",
+          width : "65%",
+          labelAlign : "top",
+          bodyStyle : "left-padding: 5px",
+          items : [            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "background-color:#eeeeee;border:2;border-color:#999999; padding-left:0px;",
+              items : [                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "3e8b2a00-6b0e-4fa2-9f75-0badc70b8398.type",
+                      fieldLabel : "Utsedd koordinator",
+                      name : "utseddKoordinator",
+                      anchor : "100%"
+                  },                    {
+                      xtype : "textarea",
+                      fieldLabel : "Kommentarer från Koordinator",
+                      anchor : "100%",
+                      name : "kommentarKoordinator",
+                      labelSeparator : ":",
+                      hideInViewModes : "INITAVSLUT,GRUNDINFO,HR",
+                      width : "100%"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "64fc6eb9-c38d-4c17-9a13-428a8eafebf9.type",
+                      fieldLabel : "Ska praktiker vara kvar i Praktikertjänst",
+                      name : "Field2",
+                      labelSeparator : "?"
+                  }],
+                  anchor : "100%"
+              }],
+              anchor : "98%",
+              width : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Dina arbetsuppgifter",
+                  style : "font-weight:bold; font-size: 140%; color: #00a1cb;"
+              }],
+              name : "arbetsuppgifter"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "HR",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "panel",
+                      cls : "tinyMCE",
+                      bodyBorder : false,
+                      html : "<br>"
+                  },                    {
+                      xtype : "label",
+                      text : "Vid intern överlåtelse",
+                      style : "font-weight:bold; font-size: 140%;"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Kontrollera med Affärscoach vilket datum och vilka medarbetare som skall flyttas över till nytt KST",
+                      name : "kontrolleraVilka"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Meddela lönetjänster vilket datum och vilka medarbetare som skall flyttas över till nytt KST",
+                      name : "meddelaLon"
+                  },                    {
+                      xtype : "button",
+                      text : "lonetjanster@ptj.se"
+                  },                    {
+                      xtype : "panel",
+                      cls : "tinyMCE",
+                      bodyBorder : false,
+                      html : "<br>"
+                  },                    {
+                      xtype : "label",
+                      text : "Vid extern överlåtelse eller nedläggning",
+                      style : "font-weight:bold; font-size: 140%;"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Kontrollera med Affärscoach och praktiker hur medarbetare berörs",
+                      name : "kontrolleraMedAC"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Se över facklig bemanning och tillhörighet",
+                      name : "seOverFack"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Förhandla enligt rutin",
+                      name : "forhandla"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Verkställ enligt rutin",
+                      name : "verkstall"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Informera lönetjänster om när medarbetarna på KST ska avslutas och kontaktuppgifter till redovisningsbyrån",
+                      name : "meddelaLon2"
+                  }]
+              }],
+              name : "HR"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Utbildning",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Kontrollera om bokade kurser finns",
+                      name : "kontrolleraKurser"
+                  }]
+              }],
+              name : "Utbildning",
+              anchor : "100%"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Löneekonom",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Avsluta rikskort",
+                      name : "avslutaRikskort"
+                  }]
+              }],
+              anchor : "100%",
+              name : "loneekonom"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Försäkring",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Avsluta premien för praktik- och sakförsäkring",
+                      name : "avslutaPremie"
+                  },                    {
+                      xtype : "label",
+                      text : "Ska inte avslutas om praktikern är kvar som internkonsult (se stängdatum för anställning)"
+                  }]
+              }],
+              anchor : "100%",
+              name : "forsakring"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Fordringshandläggare",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Avsluta stående BO",
+                      name : "avslutaBO"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Kontrollera inkassoärenden",
+                      name : "kontrolleraInkasso"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Reglera 1580",
+                      name : "reglera1580"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Reglera 1540",
+                      name : "reglera1540"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Reglera 1541",
+                      name : "reglera1541"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Reglera 1520",
+                      name : "reglera1520"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Reglera 1521",
+                      name : "reglera1521"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Reglera 1911",
+                      name : "reglera1911"
+                  }]
+              }],
+              anchor : "100%",
+              name : "fordringshandlaggare"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Slutavräknare",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Företags-PlusGiro avslutat",
+                      name : "plusgiroAvslutas"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Omkostnadskassa reglerad",
+                      name : "omkostnadskassa"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Kontrollera att semesterlöneskuld är reglerad",
+                      name : "semesterloneskuld"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Kontrollera ej ännu debiterade tilläggstjänster i Agresso",
+                      name : "kontrolleraAgresso"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Ändra leveranssätt för månadsrapporten till internt",
+                      name : "leveransManadsrapport"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Enkät mottagen",
+                      name : "enkatMottagen"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Enkät mottagen",
+                      name : "enkatMottagen"
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Slutavräkning utskickad",
+                      name : "slutavrakningUtskickad"
+                  },                    {
+                      xtype : "button",
+                      text : "it-support@ptj.se"
+                  }]
+              }],
+              anchor : "100%",
+              name : "slutavraknare"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  items : [                    {
+                      xtype : "label",
+                      text : "Marknad & kommunikation",
+                      style : "font-weight:bold; font-size: 140%;"
+                  },                    {
+                      layout : "form",
+                      bodyStyle : "padding:10px;",
+                      labelAlign : "top",
+                      autoScroll : true,
+                      items : [                        {
+                          xtype : "label",
+                          text : "Kontrollera nedanstående med affärscoach"
+                      },                        {
+                          xtype : "checkbox",
+                          boxLabel : "Egen hemsida, domän borttages",
+                          name : "hemsidaDoman"
+                      },                        {
+                          xtype : "checkbox",
+                          boxLabel : "Egen hemsida, via Praktikertjänst borttages",
+                          name : "hemsidaPTJ"
+                      },                        {
+                          xtype : "checkbox",
+                          boxLabel : "Information på externa sidor borttages, tex. Eniro, tandlakare.se etc.",
+                          name : "informationExtern"
+                      },                        {
+                          xtype : "checkbox",
+                          boxLabel : "Patientutskick (trivselbrev)",
+                          name : "trivselbrev"
+                      }]
+                  }]
+              }],
+              anchor : "100%",
+              name : "marknad"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "IT-support",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Skicka lista på abonnemang till praktikern",
+                      name : "skickaLista"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Hantera abonnemang enligt praktikers önskemål",
+                      name : "hanteraAbonnemang"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Avsluta alla abonnemang med slutfaktura en månad innan stängdatum om inget svar inkommit",
+                      name : "avslutaAbonnemang"
+                  }]
+              }],
+              anchor : "100%",
+              name : "itsupport"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Arkivarie",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Bilaga inkommit",
+                      name : "bilagaInkommit"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Vårdgivarbrev framtaget",
+                      name : "brevFramtaget"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Vårdgivarbrev skickat",
+                      name : "brevSkickat"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Adresslista med tidsförslag skickat till journalleverantör",
+                      name : "adresslistaJournal"
+                  },                    {
+                      xtype : "panel",
+                      cls : "tinyMCE",
+                      bodyBorder : false,
+                      html : "<br>"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                      fieldLabel : "Ska pappersjournaler arkiveras",
+                      name : "papperArkiveras",
+                      labelSeparator : "?"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                      fieldLabel : "Ska räkenskaper arkiveras",
+                      name : "rakenskaperArkiveras",
+                      labelSeparator : "?"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Debitera för arkivering",
+                      name : "debiteraArkivering"
+                  }]
+              }],
+              anchor : "100%",
+              name : "arkivarie"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Ekonomiassistent Avslutsgruppen",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Skicka brev om avslut till leverantörer",
+                      name : "brevAvslutLev"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Kontrollera om något ska vidarefaktureras till praktiker",
+                      name : "vidarefaktureras"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Reglera eventuella felbetalda lokalhyror",
+                      name : "regleraHyror"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Reglera eventuella garage- och parkeringshyror",
+                      name : "regleraGarage"
+                  }]
+              }],
+              anchor : "100%",
+              name : "pension"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Lönetjänster",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "label",
+                      text : "För kostnadsställeansvarig",
+                      style : "font-weight:bold; font-size: 120%;"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Registrera avgångsdatum/orsak",
+                      name : "registreraAvgang"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Avsluta hyressystem (kontrollera med affärscoach)",
+                      name : "avslutaHyressystem"
+                  },                    {
+                      xtype : "panel",
+                      cls : "tinyMCE",
+                      bodyBorder : false,
+                      html : "<br>"
+                  },                    {
+                      xtype : "label",
+                      text : "För övrig personal",
+                      style : "font-weight:bold; font-size: 120%;"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Registrera avgångsdatum/orsak eller byte av resultatenhet",
+                      name : "registreraAvgangA"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Kompsaldo (betalas ut månaden efter stängdatum för anställning)",
+                      name : "kompsaldo"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Semesterclearing (görs två månader efter stängdatum för anställning)",
+                      name : "semesterskuldslista"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Semesterskuldslista skickas till redovisningsbyrå",
+                      name : "semesterskuldslistaRedovisning"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Löneskuld på resultatenhet är reglerad (K01/anställd)",
+                      name : "loneskuld"
+                  }]
+              }],
+              anchor : "100%",
+              name : "lonetjanster"
+          },            {
+              xtype : "fieldset",
+              autoHeight : true,
+              style : "border:0; padding-left:0px;",
+              items : [                {
+                  xtype : "label",
+                  text : "Koordinator",
+                  style : "font-weight:bold; font-size: 140%;"
+              },                {
+                  layout : "form",
+                  bodyStyle : "padding:10px;",
+                  labelAlign : "top",
+                  autoScroll : true,
+                  items : [                    {
+                      xtype : "checkbox",
+                      boxLabel : "Lägg in stängdatum i Kundstöd",
+                      name : "stangKundstod"
+                  },                    {
+                      xtype : "checkbox",
+                      boxLabel : "Logga i Kundstöd vad som händer med mottagningen och praktikern",
+                      name : "loggaKundstod"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "bokaTelefonmote",
+                      boxLabel : "Boka datum för telefonmöte"
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Datum för telefonmöte",
+                      name : "datumTelefonmote"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "inbjudanInfo",
+                      boxLabel : "Skickat inbjudan till praktiker för avslutsinfo"
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Datum då inbjudan sändes",
+                      name : "datumInbjudan"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "tackkort",
+                      boxLabel : "Skapat tackkort och mailat till Kontorsservice"
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Datum då tackkort skapas",
+                      name : "datumTackkort"
+                  },                    {
+                      xtype : "button",
+                      text : "kontorsservice@ptj.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaCM",
+                      boxLabel : "Avsluta CM"
+                  },                    {
+                      xtype : "button",
+                      text : "ekonomiassistent@ptj.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avanmalanIVO",
+                      boxLabel : "Avanmälan på IVO:s portal"
+                  },                    {
+                      xtype : "panel",
+                      cls : "tinyMCE",
+                      bodyBorder : false,
+                      html : "<p><a href=\"http://registerplattform.ivo.se\" target=\"_blank\">Klicka h&auml;r f&ouml;r att komma till IVO</a></p>"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaSAMI",
+                      boxLabel : "Avsluta debitering för SAMI"
+                  },                    {
+                      xtype : "button",
+                      text : "kund@sami.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaSTIM",
+                      boxLabel : "Avsluta debitering för STIM"
+                  },                    {
+                      xtype : "button",
+                      text : "kundservice@stim.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaIKEA",
+                      boxLabel : "Avsluta IKEA-kort"
+                  },                    {
+                      xtype : "button",
+                      text : "inkop@ptj.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaLoomis",
+                      boxLabel : "Avsluta Loomis-avtal"
+                  },                    {
+                      xtype : "button",
+                      text : "kundtjanst@se.loomis.com"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaRedovisning",
+                      boxLabel : "Avsluta redovisningsnummer"
+                  },                    {
+                      xtype : "button",
+                      text : "kortacceptlaka-se@teller.com"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaCollector",
+                      boxLabel : "Avsluta Collector (endast TV)"
+                  },                    {
+                      xtype : "button",
+                      text : "tandvardskonto@collector.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaMedspace",
+                      boxLabel : "Avsluta MedSpace (endast TV)"
+                  },                    {
+                      xtype : "button",
+                      text : "support@medspace.se, support@ptjbackup.se, lisa.stenberg@ptj.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avanmalanEnkat",
+                      boxLabel : "Avanmäl enkätsystem för kvalitet - Entergate (Endast TV)"
+                  },                    {
+                      xtype : "button",
+                      text : "amanda@entergate.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avanmalanFK",
+                      boxLabel : "Avanmälan FK - skicka brev till FK i Umeå (Endast TV)"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avanmalanTandtekniker",
+                      boxLabel : "Avanmälan hos Tandteknikerförbundet (endast Tandtekniker)"
+                  },                    {
+                      xtype : "button",
+                      text : "cecilia.karlsson@dentallab.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "mailLandsting",
+                      boxLabel : "Mail till Landstinget (endast HS)"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avregistreraSjukgymnaster",
+                      boxLabel : "Avregistrera sjukgymnaster och fysioterapeuter till referensgrupp (endast HS)"
+                  },                    {
+                      xtype : "button",
+                      text : "jay.lewis@ptj.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avanmalanLakare",
+                      boxLabel : "Avanmälan hos Läkareförbundet (endast Läkare)"
+                  },                    {
+                      xtype : "button",
+                      text : "johnny.gustafsson@slf.se"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "infoAvslutsflik",
+                      boxLabel : "Informera praktiker om Avslutsfliken på Insikt"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "infoBehorighet",
+                      boxLabel : "Informera om begränsade behörigheter på Insikt efter stängdatum"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "infoEpost",
+                      boxLabel : "Informera om att e-post stängs vid sista anställningsdag"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "epostKundstod",
+                      boxLabel : "Lägg in privat e-post i Kundstöd"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "infoFordringar",
+                      boxLabel : "Informera om utstående fordringar"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "infoLevavtal",
+                      boxLabel : "Informera om övriga leverantörsavtal som behöver sägas upp/avslutas/överlåtas"
+                  },                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "f822f331-a412-407d-adc6-57efc42b027b.type",
+                      fieldLabel : "Betalterminal på mottagningen",
+                      name : "betalterminal"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "omprogrammeraBetalterminal",
+                      boxLabel : "Omprogrammera befintlig betalterminal"
+                  },                    {
+                      xtype : "button",
+                      text : "ptj@bambora.com"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "avslutaBetalterminal",
+                      boxLabel : "Avsluta och återsänd betalterminal"
+                  },                    {
+                      xtype : "button",
+                      text : "support@bambora.com"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "ITTelefoni",
+                      boxLabel : "IT/telefoni"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "SMS",
+                      boxLabel : "SMS-tjänst"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "paminnUppsagning",
+                      boxLabel : "Påminn om uppsägningar/ändring av föreningar"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "infoArkivering",
+                      boxLabel : "Information om arkivering"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "kontrollAktier",
+                      boxLabel : "Kontrollera vad som händer med aktier"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "slutavrakning",
+                      boxLabel : "Slutavräkning"
+                  },                    {
+                      xtype : "checkbox",
+                      name : "minnesgava",
+                      boxLabel : "Minnesgåva"
+                  }]
+              }],
+              anchor : "100%",
+              name : "koordinator"
+          }]
+      },        {
+          layout : "form",
+          width : "34%",
+          labelAlign : "top",
+          bodyStyle : "padding: 10px",
+          items : [            {
+              xtype : "combotypefield2",
+              typeNamespace : "9fb05efe-9e15-4680-b550-4ec478dbfe5d.type",
+              fieldLabel : "Avgångsorsak",
+              name : "avgangsorsak",
+              labelSeparator : "?",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+              anchor : "100%",
+              style : "border-radius:3px",
+              allowBlank : false
+          },            {
+              xtype : "combotypefield2",
+              typeNamespace : "e3d921ca-66bc-49fe-a03a-92d1ca9d69fa.type",
+              fieldLabel : "Vad händer med resultatenheten",
+              name : "vadHander",
+              labelSeparator : "?",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+              anchor : "100%",
+              style : "border-radius:3px",
+              allowBlank : false,
+              togglePanels : function () {
+  var utkop = this.getFormField('fieldsetUtkop');
+  var internforsaljning = this.getFormField('fieldsetInternforsaljning').getValue();
+  var vadHander = this.getFormField('vadHander');   
+  
+    if (vadHander == 'Säljs Internt')
+      {
+          internforsaljning.show();
+          internforsaljning.validate();        
+     }
+      else
+        {
+          internforsaljning.hide();
+          internforsaljning.validate();          
+     }  
+   
+       if (vadHander == 'Köps ut')
+      {
+          utkop.show();
+          utkop.validate();        
+     }
+      else
+        {
+          utkop.hide();
+          utkop.validate();          
+     }  
+ 
+},
+              listeners : {
+  render : function (combo) {
+var form = combo.findParentByType("jsonformpanel");
+if(!form) 
+    form = Ext.getCmp("presentpanel");
+if (form)
+    form.on("afterjsonload",function() {combo.togglePanels(combo);});
+},
+  select : function (combo) {
+combo.getFormField("utkop").setValue("");
+combo.getFormField("internForsaljning").setValue("");
+combo.togglePanels(combo); 
+    }
+}
+          },            {
+              xtype : "textfield",
+              fieldLabel : "Vilka är köparna",
+              anchor : "100%",
+              name : "vilkaArKoparna",
+              emptyText : "Syns bara vid internförsäljning",
+              labelSeparator : "?"
+          },            {
+              xtype : "combotypefield2",
+              typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+              fieldLabel : "Finns intressent",
+              name : "finnsIntressent",
+              labelSeparator : "?",
+              hideInViewModes : "PERSONUPPGIFTER,AFFARSUPPGIFTER,RONTGEN,BESLUT,SKAPAKST,AVTALSSKRIVNING",
+              anchor : "100%",
+              style : "border-radius:3px",
+              allowBlank : false,
+              emptyText : "Syns bara vid Rekrytering"
+          },            {
+              xtype : "textfield",
+              fieldLabel : "Uppgifter på intressent",
+              anchor : "100%",
+              name : "uppgifterIntressent",
+              emptyText : "Syns bara om intressent finns (ej oblg.)"
+          },            {
+              autoHeight : true,
+              items : [                {
+                  xtype : "textfield",
+                  fieldLabel : "Namn",
+                  anchor : "100%",
+                  name : "namn",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i förnamn och efternamn",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Adress",
+                  anchor : "100%",
+                  name : "adress",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i postadress",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "E-post",
+                  anchor : "100%",
+                  name : "epost",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i epostadress",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Telefon",
+                  anchor : "100%",
+                  name : "telefon",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i telefonnummer",
+                  allowBlank : false
+              },                {
+                  xtype : "textfield",
+                  fieldLabel : "Resultatenhetsnummer",
+                  anchor : "100%",
+                  name : "rhnr",
+                  style : "border-radius:3px",
+                  emptyText : "Fyll i telefonnummer",
+                  allowBlank : false
+              },                {
+                  xtype : "combotypefield2",
+                  typeNamespace : "5ee56538-8474-4dc4-a5bc-c03c188355ac.type",
+                  fieldLabel : "Finns flera resultatenheter",
+                  name : "FinnsFleraRH",
+                  labelSeparator : "?",
+                  allowBlank : false
+              },                {
+                  autoHeight : true,
+                  labelAlign : "top",
+                  items : [                    {
+                      xtype : "combotypefield2",
+                      typeNamespace : "d2779f6e-0542-4b5b-a518-ef2e9a933a85.type",
+                      fieldLabel : "Landsting",
+                      name : "landsting",
+                      anchor : "100%",
+                      emptyText : "Välj vilket landsting verksamheten drivs i",
+                      allowBlank : false
+                  },                    {
+                      xtype : "textfield",
+                      fieldLabel : "Journalsystem",
+                      anchor : "100%",
+                      name : "Field9",
+                      emptyText : "Fyll i vilket Journalsystem som används",
+                      allowBlank : false
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Föreslaget stängdatum för kliniskt avslut",
+                      name : "foreslagetStangdatumKlinisk",
+                      anchor : "100%",
+                      emptyText : "Välj föreslaget stängdatum för kliniskt avslut",
+                      allowBlank : false
+                  },                    {
+                      xtype : "datefield",
+                      fieldLabel : "Föreslaget stängdatum för anställning",
+                      name : "foreslagetStangdatumAnst",
+                      anchor : "100%",
+                      emptyText : "Välj föreslaget stängdatum för anställning",
+                      allowBlank : false
+                  }],
+                  layout : "form",
+                  title : "Uppgifter om avslut"
+              }],
+              labelAlign : "top",
+              layout : "form",
+              anchor : "100%",
+              title : "Uppgifter om praktiker"
+          },            {
+              layout : "form",
+              bodyStyle : "padding:10px;",
+              labelAlign : "top",
+              autoScroll : true,
+              items : [                {
+                  xtype : "panel",
+                  cls : "tinyMCE",
+                  bodyBorder : false,
+                  style : "margin-top: 10px;",
+                  name : "Info",
+                  html : "<p>Du beh&ouml;ver nu genomf&ouml;ra arbetsuppgifterna nedan kring detta avslut.</p>"
+              }]
+          }],
+          style : "background-color:#eeeeee"
+      }],
+      anchor : "100%",
+      colspan : 2
+  }],
+  width : "100%"
+}
